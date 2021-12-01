@@ -1,0 +1,120 @@
+% xelatex -synctex=1 -interaction=nonstopmode -shell-escape file.tex
+\documentclass[a4paper,12pt]{report}
+\usepackage[cm-default]{fontspec}
+\usepackage[russian]{babel}
+
+% полезные расширения, может быть полезным
+\usepackage{xunicode, xltxtra}
+
+\usepackage{multicol}
+\usepackage{color}
+
+\usepackage[top=20mm, bottom=20mm, left=25mm, right=15mm]{geometry}
+\setmainfont{Times New Roman} %CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+%
+\author{Имя Фамилия}
+\title{Название статьи}
+\date{\today}
+\definecolor{graylight}{rgb}{0.6, 0.6, 0.6}
+
+\begin{document}
+\thispagestyle{empty}
+%\maketitle % титульный лист; список исполнителей;
+\begin{center}
+%\textsc
+\sc
+ФЕДЕРАЛЬНОЕ  ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ
+ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ
+«НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»
+\end{center}
+
+\begin{center}
+\bf Московский институт электроники и математики им.~А.Н.~Тихонова
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+Фамилия Имя Отчество автора
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\bf НАЗВАНИЕ ТЕМЫ ВКР
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+Выпускная квалификационная работа \par
+по специальности 10.05.01 «Компьютерная безопасность» \par
+студента образовательной программы специалитета
+\end{center}
+
+\vfill
+
+\begin{multicols}{2}
+\begin{flushleft}
+~Студент\par\:\par
+\begin{tabular}{c}
+\underline{\hspace{8em}} \vspace{-2mm}\\
+{\tiny {\color{graylight}подпись}}
+\end{tabular}
+\begin{tabular}{c}
+\underline{\hspace{2em}Сидоров В.В.\hspace{1em}}\\
+{\tiny{\color{graylight} ФИО}}
+\end{tabular}
+\end{flushleft}
+
+\begin{flushright}
+Научный руководитель
+
+к.т.н., доцент
+\end{flushright}
+
+\begin{tabular}{c}
+\underline{\hspace{8em}} \vspace{-1mm}\\
+{\tiny {\color{graylight}подпись}}
+\end{tabular}
+\begin{tabular}{c}
+\underline{\hspace{2em}Иванов И.И.\hspace{1em}} \vspace{-1mm}\\
+{\tiny{\color{graylight} ФИО}}
+\end{tabular}
+\end{multicols}
+
+\vfill
+\begin{center}Москва, 2021 г.\end{center}
+\newpage
+\tableofcontents % содержание;
+
+%\chapter{Реферат}
+\chapter{Определения}\label{chapter::def}
+
+\chapter{Обозначения и сокращения}
+\chapter{Введение}
+
+\section{Раздел}
+
+\subsection{Подраздел}\label{subsection::p1}
+
+\subsubsection{Пункт}
+
+\paragraph{Параграф} Текст
+
+% основная часть
+
+\chapter{Заключение}
+
+в главе \ref{chapter::def}-й излагается ....
+
+\chapter{Список литература} % список использованных источников
+
+находится на странице \pageref{chapter::def}
+
+\chapter{Приложение}
+
+\end{document}

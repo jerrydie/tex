@@ -1,0 +1,376 @@
+% xelatex -synctex=1 -interaction=nonstopmode -shell-escape file.tex
+\documentclass[a4paper,12pt, landscape]{report}
+\usepackage[cm-default]{fontspec}
+\usepackage[russian]{babel}
+
+% полезные расширения, может быть полезным
+\usepackage{xunicode, xltxtra}
+
+%
+%\usepackage{}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{longtable}
+
+\usepackage[top=20mm, bottom=20mm, left=25mm, right=15mm]{geometry}
+\setmainfont{Times New Roman} %CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+%
+\author{Имя Фамилия}
+\title{Название статьи}
+\date{\today}
+\definecolor{graylight}{rgb}{0.6, 0.6, 0.6}
+
+\renewcommand{\le}{<=}
+
+\begin{document}
+\thispagestyle{empty}
+%\maketitle % титульный лист; список исполнителей;
+\begin{center}
+%\textsc
+\sc
+ФЕДЕРАЛЬНОЕ  ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ
+ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ
+«НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»
+\end{center}
+
+\begin{center}
+\bf Московский институт электроники и математики им.~А.Н.~Тихонова
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+Фамилия Имя Отчество автора
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\bf НАЗВАНИЕ ТЕМЫ ВКР
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+Выпускная квалификационная работа \par
+по специальности 10.05.01 «Компьютерная безопасность» \par
+студента образовательной программы специалитета
+\end{center}
+
+\vfill
+
+\begin{multicols}{2}
+\begin{flushleft}
+~Студент\par\:\par
+\begin{tabular}{c}
+\underline{\hspace{8em}} \vspace{-2mm}\\
+{\tiny {\color{graylight}подпись}}
+\end{tabular}
+\begin{tabular}{c}
+\underline{\hspace{2em}Сидоров В.В.\hspace{1em}}\\
+{\tiny{\color{graylight} ФИО}}
+\end{tabular}
+\end{flushleft}
+
+\begin{flushright}
+Научный руководитель
+
+к.т.н., доцент
+\end{flushright}
+
+\begin{tabular}{c}
+\underline{\hspace{8em}} \vspace{-1mm}\\
+{\tiny {\color{graylight}подпись}}
+\end{tabular}
+\begin{tabular}{c}
+\underline{\hspace{2em}Иванов И.И.\hspace{1em}} \vspace{-1mm}\\
+{\tiny{\color{graylight} ФИО}}
+\end{tabular}
+\end{multicols}
+
+\vfill
+\begin{center}Москва, 2021 г.\end{center}
+\newpage
+\tableofcontents % содержание;
+
+\setcounter{page}{2}
+\renewcommand{\thepage}{строка номер \Asbuk{page}}
+
+%\chapter{Реферат}
+\chapter{Определения}\label{chapter::def}
+
+
+Текстовая строка $\sin\pi = 0, \tan 0 = 0  $
+
+\begin{gather*}
+e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n =
+= \sum_{n=0}^\infty \frac{1}{n!}\\
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}, 0 < |x| \le 1
+\\
+\int_{1}^{e^{12}} \frac{1}{x}dx = \ln x \big|_{1}^{e^{12}} =
+\ln e^{12} = \ln 1 = 12.
+\end{gather*}
+
+\begin{multline}
+e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n =
+= \sum_{n=0}^\infty \frac{1}{n!}\\
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}, 0 < |x| \le 1
+\\
+\int_{1}^{e^{12}} \frac{1}{x}dx = \ln x \big|_{1}^{e^{12}} =
+\ln e^{12} = \ln 1 = 12.
+\end{multline}
+
+
+Текстовая строка
+
+Текстовая строка
+
+$$
+f(x) = x^3+1 \in \mathbb F_{q^n} = GF(q^n)
+\mathbb N, \mathbb Q, \mathbb R, \mathbb C, \mathbb A = \mathbb Q(\sqrt[3]{17})
+$$
+
+
+Текстовая строка
+
+%\begin{table}
+%\begin{tabular}
+
+$$ \pi \left(
+\begin{array}{cccc}
+1 & 2 & 3 & 4\\
+3 & 1 & 2 & 4\\
+\end{array}
+\right)
+$$
+
+\begin{center}
+\begin{longtable}{|c||c||c|}
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+ривет & мир & $\sin x$ \\
+\hline
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $ \pi \left(
+\begin{array}{cccc}
+1 & 2 & 3 & 4\\
+3 & 1 & 2 & 4\\
+\end{array}
+\right)
+$
+ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+Привет & мир & $\sin x$ \\
+\hline
+\end{longtable}
+\end{center}
+
+\chapter{Обозначения и сокращения}
+\chapter{Введение}
+
+\section{Раздел}
+
+\begin{enumerate}
+ \item Первая строка
+
+\item Вторая строка, которая очень длинна
+\begin{enumerate}
+ \item\label{sss} Первая строка
+
+\item Вторая строка, которая очень длинна
+
+\end{enumerate}
+
+\end{enumerate}
+
+В разделе \ref{sss} fff
+
+\subsection{Подраздел}\label{subsection::p1}
+
+\subsubsection{Пункт}
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+
+\paragraph{Параграф} Текст
+
+% основная часть
+
+\chapter{Заключение}
+
+в главе \ref{chapter::def}-й излагается ....
+
+%\chapter{Список литература} % список использованных источников
+
+\begin{thebibliography}{100}
+\bibitem{lenin123} Ленин (Ульянов) В.И. Собрание сочинений. Том 2. -- 1972.
+\end{thebibliography}
+
+\texttt{}
+\tt
+%находится на странице \pageref{chapter::def}
+
+\chapter{Приложение}
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+В работе \cite{lenin123} сказано, что все будет хорошо ...
+
+\end{document}

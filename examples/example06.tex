@@ -1,0 +1,74 @@
+% xelatex -synctex=1 -interaction=nonstopmode -shell-escape file.tex
+\documentclass[a4paper,12pt]{article}
+\usepackage[cm-default]{fontspec}
+\usepackage[russian]{babel}
+
+\usepackage{graphicx}
+
+\usepackage{minted}
+
+% полезные расширения, может быть полезным
+% \usepackage{xunicode, xltxtra}
+
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+%
+\author{Имя Фамилия}
+\title{Название статьи}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{verbatim}
+
+ int main( void )
+{
+  printf("Hello\n");
+ return 0;
+}
+\end{verbatim}
+
+\sloppy
+
+%https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted
+
+\begin{minted}[firstline=2, lastline=3, linenos]{c}
+
+ int main( void )
+{
+  printf("Hello\n");   printf("Hello\n");    printf("Hello\n");    printf("Hello\n");    printf("Hello\n");    printf("Hello\n");    printf("Hello\n");    printf("Hello\n");    printf("Hello\n");
+ return 0;
+}
+\end{minted}
+
+\inputminted[linenos]{tex}{example06.tex}
+
+Частный случай \verb`int main(void) { return 0;  }`
+
+% xelatex -synctex=1 -interaction=nonst \documentclass[a4paper,12pt]{article} \usepackage[cm-default]{fontspec} \usepackage[russian]{babel} \usepackage{graphicx} \usepackage{minted}
+
+% xelatex -synctex=1 -interaction=nonst \documentclass[a4paper,12pt]{article} \usepackage[cm-default]{fontspec} \usepackage[russian]{babel} \usepackage{graphicx} \usepackage{minted}
+
+\begin{verbatim} int main( void ) { printf("Hello\n"); return 0; } \end{verbatim}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+

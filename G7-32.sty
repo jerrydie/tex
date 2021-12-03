@@ -77,19 +77,7 @@
 \newenvironment{abstract}{%То же самое, только как у белых людей -- Коротков И.
  \Referat
 }{}
-\newcommand\Defines{%глоссарий
-    \newpage
-    \section*{\centering ОПРЕДЕЛЕНИЯ}%Ugly hack((( FIXME
-    % суть в том что Defines находится внутри nomencl и только section выкидывает в нужное место
-    \section*{\mdseries В настоящем отчете о НИР применяют следующие термины с соответствующими определениями.}% Ugly hack(((
-}
-%\newcommand\Defines{%определения
-% \chapter*{Определения}%
-%}
-\newcommand\Abbreviations{%обозначения и сокращения
- \chapter*{Обозначения~и~%
-           сокращения}%
-}
+
 \newcommand\Introduction{%введение
  \chapter{Введение}%
 }
@@ -191,7 +179,7 @@
 \newcommand\NirAbout[1]{\renewcommand\Nir@About{#1}}      % to change otchet about text
 
 % Annotated report
-\newcommand\Nir@AnnOtchet{ %отчёт аннотационный!?
+\newcommand\Nir@AnnOtchet{ %отчёт аннотационный?
 }
 \newcommand*\NirIsAnnotacion[1]{\renewcommand\Nir@AnnOtchet{#1}} %%Если отчёт аннотационный
 
@@ -228,7 +216,7 @@
 \newcommand\Nir@BossPost{
     \vspace{3ex}
     \hrule\par \vspace{1ex}
-    \centering\footnotesize головной исполнитель НИР
+    \centering\footnotesize головной исполнитель
 }
 \newcommand\Nir@BossName{\makebox[5em]{\ulfill}}
 
@@ -453,32 +441,5 @@
   }%
 } % It should be used before any uses of \NirFinalStage, of course.
 
-% Обозначения и сокращения
-\RequirePackage{nomencl}%
 
-\def\three@digits#1{\ifnum#1>99\else\ifnum#1>9 0\else00\fi\fi\number#1}
-
-\newcounter{abbrev}%
-\newcommand{\Define}[2]{\nomenclature[X]{#1}{#2.}}%
-\newcommand{\Abbrev}[2]{%
-    \addtocounter{abbrev}{1}%
-    \nomenclature[Y{\three@digits{\value{abbrev}}}]{#1}{#2.}%
-}%
-
-\renewcommand\nomname{}%
-\renewcommand\nomgroup[1]{%
-    \if#1X%
-        \Defines%
-    \else%
-        \Abbreviations%
-    \fi%
-}%
-\renewcommand\nomlabel[1]{#1 \cdash---\kern-0.4em}%
-\renewcommand\thenomenclature{%
-    \list{}{%
-        \let\makelabel\nomlabel%
-    }%
-}%
-
-\makenomenclature%
 

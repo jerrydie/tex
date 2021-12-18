@@ -7,3 +7,4 @@ bibtex main
 pdflatex main
 pdflatex main
 ```
+Сборочные файлы находятся в директории `src`.

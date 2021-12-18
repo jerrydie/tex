@@ -11,13 +11,14 @@
 % Further tweaks and development (according to the requirements of
 % ГОСТ 7.32-2001 ред. 2009 года.pdf and some other random wishes)
 % -- Ivan Zakharyaschev <imz@altlinux.org>.
+% Изменено Щегловой Полиной под будущие стандартные нужды.
 \ProvidesPackage{G7-32}[2015/11/01 v2.00 Titles for GOST 7.32-2001]
 
 %%%%%%%%%%%%%%%%%%
-%Latex 2012 and up
+%Latex 2012 и новее
 \newcommand*{\No}{\textnumero}
 
-% ГОСТ 7.32-2001 ред. 2009 года.pdf item 6.1.2:
+% ГОСТ 7.32-2001 ред. 2009 года.pdf пункт 6.1.2:
 % Полужирный шрифт не применяется
 \renewcommand\GostTitleStyle{%
 \hyphenpenalty=10000
@@ -28,7 +29,7 @@
     \fi%
 }%
 
-% ГОСТ 7.32-2001 ред. 2009 года.pdf item 6.2.1:
+% ГОСТ 7.32-2001 ред. 2009 года.pdf пункт 6.2.1:
 % Заголовки структурных элементов следует располагать в середине
 % строки без точки в конце и печатать прописными буквами, не
 % подчёркивая.
@@ -40,9 +41,7 @@
     \centering\MakeUppercase
 }
 
-% Get rid of the large font in chapter titles
-% (not sure whether this is regulated)
-% (TODO: Perhaps, this should be an option.)
+% Убрать увеличение шрифта в названиях глав
 \renewcommand\Gost@MainChapterStyle{%
 \hyphenpenalty=10000
     \if@usebold%
@@ -74,20 +73,14 @@
            \vspace{1ex}
 }
 
-\newenvironment{abstract}{%То же самое, только как у белых людей -- Коротков И.
- \Referat
-}{}
+
 
 \newcommand\Introduction{%введение
  \chapter{Введение}%
 }
-\newcommand\Conclusion{%заключение
- \chapter{Заключение}%
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Personal names, roles and signatures
-% (for Executors and the managers on the title page)
+
 
 \newcommand*\personalSignature[2]{%
   \par\noindent
@@ -104,55 +97,49 @@
 
 \newenvironment*{executors}{%
   \Executors
-  % There will be subheadings like:
-  % 
-  % * perhaps -- Руководитель темы
+  % * Руководитель темы
   % * Исполнители:
-  % * optionally -- Соисполнители
+  % * опционально -- Соисполнители
   % 
-  % They should be printed without an indent.
   \setlength{\parindent}{0pt}
-  % This environment could be useful to change other parameters as
-  % well:
-  % TODO: parameterize the sizes of the blocks in \personalSignature
 }{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Элементы оформления титульной страницы
-% UDK number
+% УДК
 \newcommand\Nir@UdkName{УДК \makebox[3em]{\ulfill}%
 }
-\newcommand*\NirUdk[1]{\renewcommand\Nir@UdkName{#1}}%%virens added: для изменения УДК в тексте документа
+\newcommand*\NirUdk[1]{\renewcommand\Nir@UdkName{#1}}% для изменения УДК в тексте документа
 
-% Government registration number
+% Номер госрегистрации
 \newcommand\Nir@No{%
  \No~госрегистрации \makebox[3em]{\ulfill}%
 }
-\newcommand*\NirGosNo[1]{\renewcommand\Nir@No{#1}}%%virens added: номер госрегистрации
+\newcommand*\NirGosNo[1]{\renewcommand\Nir@No{#1}}% для изменения номера госрегистрации
 
-% Examples number
+% Номер экземпляра
 \newcommand\Nir@Ekz{%
-    \vspace{-2ex}                 % Number examples
+    \vspace{-2ex}
 }
-\newcommand*\NirEkz[1]{\renewcommand\Nir@Ekz{#1}}               %%  To change exemples num
+\newcommand*\NirEkz[1]{\renewcommand\Nir@Ekz{#1}}               %%  для изменения номера
 
-% Grif
-\newcommand\Nir@Grif{\vspace{-2ex}}                          % Top secret if needed, default blank
-\newcommand*\NirGrif[1]{\renewcommand\Nir@Grif{#1}}             %%  To change grif 
+% Гриф
+\newcommand\Nir@Grif{\vspace{-2ex}}                          % Гриф секретности
+\newcommand*\NirGrif[1]{\renewcommand\Nir@Grif{#1}}             %%  Изменить гриф 
 
-% Confirm text
+% Утверждающий текст
 \newcommand*\Nir@Confirm{%
 Утверждаю%
 }
-\newcommand*\NirConfirm[1]{\renewcommand\Nir@Confirm{#1}}       %%  To change confirm
+\newcommand*\NirConfirm[1]{\renewcommand\Nir@Confirm{#1}}       %%  Изменить утверждающий текст
 
-% Inventory number
+% Инв. №
 \newcommand\Nir@InventarNo{
  Инв.~\No \makebox[3em]{\ulfill}%
 }
-\newcommand*\NirInventarNo[1]{\renewcommand\Nir@InventarNo{#1}} % to change Inv number
+\newcommand*\NirInventarNo[1]{\renewcommand\Nir@InventarNo{#1}} % Изменить Инв. №
 
-% Organization name
+% Наименование организации
 \newcommand\Nir@OrgLongName{
     \vspace{1ex}
 
@@ -164,53 +151,51 @@
 \newcommand\NirOrgLongName[1]{\renewcommand\Nir@OrgLongName{#1}}
 
 
-% Report Name
+% Наименование отчета
 \newcommand*\Nir@ReportName{%
  Отчёт%
 }
-\newcommand\NirReportName[1]{\renewcommand\Nir@ReportName{#1}}        % to change otchet name text
+\newcommand\NirReportName[1]{\renewcommand\Nir@ReportName{#1}}        % Изменить наименование отчета
 
-% Report about text
+% О чем отчет
 \newcommand*\Nir@About{
  О{} НАУЧНО-%
  ИССЛЕДОВАТЕЛЬСКОЙ{} %
  РАБОТЕ%
 }
-\newcommand\NirAbout[1]{\renewcommand\Nir@About{#1}}      % to change otchet about text
+\newcommand\NirAbout[1]{\renewcommand\Nir@About{#1}}      % изменить о чем отчет
 
-% Annotated report
 \newcommand\Nir@AnnOtchet{ %отчёт аннотационный?
 }
 \newcommand*\NirIsAnnotacion[1]{\renewcommand\Nir@AnnOtchet{#1}} %%Если отчёт аннотационный
 
-% Report part 
-\newcommand*\Nir@PartNum{\vspace{-2ex}}     % Part name and number 
-\newcommand\NirPartNum[2]{\renewcommand\Nir@PartNum{#1 #2}}     % to change finalname  text
+\newcommand*\Nir@PartNum{\vspace{-2ex}}     
+\newcommand\NirPartNum[2]{\renewcommand\Nir@PartNum{#1 #2}}   
 
-% Report Year
+% Год отчета
 \newcommand\Nir@Year{\the\year}
-\newcommand*\NirYear[1]{\renewcommand\Nir@Year{#1}} % Year of report changeable
+\newcommand*\NirYear[1]{\renewcommand\Nir@Year{#1}} % Изменить год отчета
 
 \newcommand\Nir@Town{}
-\newcommand*\NirTown[1]{\renewcommand\Nir@Town{#1}}%%virens added: указываем город написания отчёта
+\newcommand*\NirTown[1]{\renewcommand\Nir@Town{#1}}% указываем город написания отчета
 
 \newcommand\Nir@BossStamp{
     \parbox[t]{.49\linewidth}{
-        {\centering\MakeUppercase{\Nir@Confirm} % Confirmation name 
+        {\centering\MakeUppercase{\Nir@Confirm} % Утверждающий текст 
 
         }
         \vspace{5mm}
-        {\raggedright\Nir@BossPost          % Director job
+        {\raggedright\Nir@BossPost          % Должность руководителя
 
         }
         \bigskip
-        \ulfill~\Nir@BossName               % Director name
+        \ulfill~\Nir@BossName               % Имя руководителя
 
         \bigskip
-        <<\makebox[3em]{\ulfill}>>~\ulfill~\Nir@Year~г. % Signature
+        <<\makebox[3em]{\ulfill}>>~\ulfill~\Nir@Year~г. % Подпись
     }
 }
-\newcommand*\NirBossStamp[1]{\renewcommand\Nir@BossStamp{#1}} % Changeable ID Boss stamp
+\newcommand*\NirBossStamp[1]{\renewcommand\Nir@BossStamp{#1}} % Изменить подпись директора
 
 
 \newcommand\Nir@BossPost{
@@ -224,23 +209,23 @@
     \renewcommand\Nir@BossPost{#2}\renewcommand\Nir@BossName{#3}
     \renewcommand\Nir@BossStamp{
         \parbox[t]{#1\linewidth}{
-            {\centering\MakeUppercase{\Nir@Confirm} % Confirmation name 
+            {\centering\MakeUppercase{\Nir@Confirm} % Утверждающий текст 
 
             }
             \vspace{5mm}
-            {\raggedright\Nir@BossPost          % Director job
+            {\raggedright\Nir@BossPost          % Должность руководителя
 
             }
             \bigskip
-            \ulfill~\Nir@BossName               % Director name
+            \ulfill~\Nir@BossName               % Имя руководителя
 
             \bigskip
-            <<\makebox[3em]{\ulfill}>>~\ulfill~\Nir@Year~г. % Signature
+            <<\makebox[3em]{\ulfill}>>~\ulfill~\Nir@Year~г. % Подпись
         }
     }
-} % ID of Director
+} 
 
-% Head manager stamp
+% Подпись научного руководителя
 \newcommand\Nir@ManagerStamp{\vspace{-2ex}}
 \newcommand\Nir@ManagerPost{
     \vspace{3ex}
@@ -263,10 +248,10 @@
             <<\makebox[3em]{\ulfill}>>~\ulfill~\Nir@Year~г.
         }
     }
-} % ID of head of research
-\newcommand*\NirManagerStamp[1]{\renewcommand\Nir@ManagerStamp{#1}} % Changeable ID Manager stamp
+} 
+\newcommand*\NirManagerStamp[1]{\renewcommand\Nir@ManagerStamp{#1}} % Изменить подпись научного руководителя
 
-% Head executor of research
+% Подпись ответственного исполнителя
 \newcommand\Nir@IspStamp[1]{\vspace{-2ex}}
 \newcommand\Nir@IspPost{
     \vspace{3ex}
@@ -289,10 +274,10 @@
             <<\makebox[3em]{\ulfill}>>~\ulfill~\Nir@Year~г.
         }
     }
-} % ID of head executor of research
-\newcommand*\NirIspStamp[1]{\renewcommand\Nir@IspStamp{#1}}     % Changeable head executor stamp
+} % 
+\newcommand*\NirIspStamp[1]{\renewcommand\Nir@IspStamp{#1}}     % Изменить подпись ответственного исполнителя
 
-%fix for first time compilation
+
 \newcommand\Nir@Title{\vspace{-2ex}}
 \newcommand\Nir[1]{\renewcommand\Nir@Title{#1}}  %Название НИР, не совместимо с \NirTitle  
 \newcommand\Nir@TitleAndSubject{
@@ -303,11 +288,7 @@
 }
 
 %
-% The simple case when the subject of the report is the same
-% as the NIR title -- like in example 2 in ГОСТ 7.32-2001 ред. 2009 года.pdf:
-
-%
-% Optionally, specify a different report subject:
+% Изменить тему отчета:
 \newcommand\NirSubject[1]{%
   \renewcommand\Nir@TitleAndSubject{%
     \Nir@Title
@@ -317,53 +298,39 @@
   }%
 }
 
-%
-% The default modifier is as in example 1 in ГОСТ 7.32-2001 ред. 2009 года.pdf:
-% "по теме:"
+
+% По умолчанию "по теме:"
 \newcommand\NirSubjectModifier{%
   по~теме:\\
-  %\MakeUppercase%
 }
 %
-% A switch for the variant of the modifier as
-% in example 3 in ГОСТ 7.32-2001 ред. 2009 года.pdf:
-% (empty)
+% Изменить на пустой
 \newcommand*\NirBareSubject[1]{%
   \renewcommand\NirSubjectModifier{}%
 }
 
-% вид отчёта:
-% The default "stage type" is "intermediate" ("промежуточный")
-% (this default saves typing unless you need a modified stage type):
-% "промежуточный"
+% вид отчёта: "промежуточный" (по умолчанию)
 \newcommand\intermediatename{промежуточный}
 \newcommand\Nir@StageType{\intermediatename}
-% "заключительный"
+% изменить на "заключительный"
 \newcommand\@finalname{заключительный}
 
 %Эти команды нужно вызвать для корректного определения титульной страницы
 
-% One of the "stage type" variants
-% (if different from the default "intermediate")
-% -- set to "final"/"заключительный" if the arg is silently omitted.
-% The second variant is not supported
-% by any example in ГОСТ 7.32-2001 ред. 2009 года.pdf,
-% but it is like in a document example I've seen elsewhere.
 \newcommand*\NirFinal[1][\@finalname]{%
   \renewcommand\Nir@StageType{#1}%
 }
 \newcommand*\NirFinalStage[2][\@finalname]{%
   \renewcommand\Nir@StageType{#1, #2}%
-} % Usage: \NirFinalStage[промежуточный]{этап~3}
+} % Использование: \NirFinalStage[промежуточный]{этап~3}
 
-% Following allows to change command arguments
-\newcommand\finalname[1]{\renewcommand\@finalname{#1}}          % to change finalname  text
+\newcommand\finalname[1]{\renewcommand\@finalname{#1}}          % Изменить финальное имя
 
 \newcommand\Nir@Code{шифр\,---\,\makebox[6em]{\ulfill}}
-\newcommand*\NirCode[1]{\renewcommand\Nir@Code{#1}} % Code of report changeable
+\newcommand*\NirCode[1]{\renewcommand\Nir@Code{#1}} % Изменить код отчета
 
 
-\RequirePackage{etoolbox}%                                  For \newrobustcmd
+\RequirePackage{etoolbox}%                                  Для \newrobustcmd
 \def\beamer@calltheme#1#2#3{%
     \def\beamer@themelist{#2}%
     \@for\beamer@themename:=\beamer@themelist\do
@@ -379,26 +346,22 @@
 \newenvironment*{titlepage}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%
-% Compatibility macros
-% (with old versions of the style package):
+% Макросы совместимости с старыми версиями стилевых пакетов
 
 
 \RequirePackage{mfirstuc}
 \newcommand*\makefirstlc[1]{%
   \renewcommand*\mfirstucMakeUppercase{\MakeLowercase}%
-  % switched the case-switching command for a while
   \makefirstuc{#1}%
   \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
 }
 \newcommand*\xmakefirstlc[1]{%
   \renewcommand*\mfirstucMakeUppercase{\MakeLowercase}%
-  % switched the case-switching command for a while
   \xmakefirstuc{#1}%
   \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
 }
 \newcommand*\emakefirstlc[1]{%
   \renewcommand*\mfirstucMakeUppercase{\MakeLowercase}%
-  % switched the case-switching command for a while
   \emakefirstuc{#1}%
   \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
 }
@@ -407,39 +370,4 @@
   \NirSubject{#3}%
   \NirFinalStage[#2]{\emakefirstlc{#1}}%
 }
-% Usage example from virens
-% <http://mydebianblog.blogspot.ru/2008/09/732-2001-latex.html>:
-% 
-%     \NirStage{Этап \No 1.1}{промежуточный}{"Обзор современного состояния торсионных наногенераторов"}
-%
-% If you are using pdflatex, it might require putting the first Russian letter in braces (see
-% <http://ctan.uni-altai.ru/macros/latex/contrib/mfirstuc/mfirstuc-manual.html#sec:utf8>),
-% but if you are using xelatex, you must be OK:
-% 
-%     \NirStage{{Э}тап \No 1.1}{промежуточный}{"Обзор современного состояния торсионных наногенераторов"}
-% 
-% There, the resulting formatting violates the current standard style;
-% it can be seen at
-% http://bp0.blogger.com/_hM8AMxgJLzw/SH3c4fS0zhI/AAAAAAAAAs0/sH6kGPItCAk/s1600-h/G7-32NIRreportexample.jpg
-%
-% We use the arguments of the old macro, but format them according to
-% the current standard style. (This will allow to easily reformat old documents!)
-%
-% If you want the virens' (non-conforming) formatting, here is a
-% general switch:
-\newcommand*\nirVirensTitle{%
-  \renewcommand*\NirSubjectModifier{}%
-  \renewcommand*\NirFinalStage[2][\finalname]{%
-    \NirFinal[##1]%
-    \renewcommand*\NirSubjectModifier{\emakefirstuc{##2}~~}%
-  }%
-  % renewcommand merely to shortcut the case conversion done
-  % in \NirStage (to avoid an error):
-  \renewcommand*\NirStage[3]{%
-    \NirSubject{##3}%
-    \NirFinalStage[##2]{##1}%
-  }%
-} % It should be used before any uses of \NirFinalStage, of course.
-
-
 

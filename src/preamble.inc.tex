@@ -18,6 +18,7 @@ citecolor=black, menucolor=black, filecolor=black, urlcolor=blue,
 \fi
 
 \usepackage{graphicx}   % Пакет для включения рисунков
+\graphicspath{ {./images/} }
 
 \geometry{right=20mm}
 \geometry{left=30mm}
@@ -26,3 +27,9 @@ citecolor=black, menucolor=black, filecolor=black, urlcolor=blue,
 
 
 \setlength{\parskip}{1ex} % разрыв между абзацами
+
+% Упрощение написания ссылки
+\newcommand\case[1]{По Случаю #1 из Теоремы 2.6 из \cite{hse:Teoria_Gener}}
+
+
+

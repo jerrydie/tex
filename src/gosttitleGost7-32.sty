@@ -31,7 +31,19 @@
 
     \hfill \Nir@Ekz
     \vspace{-3ex}
+        \IfFileExists{logo.pdf}{      % logo for first page (no compatible with GOST)
+        \begin{flushleft}
+            \parbox[t]{.3\linewidth}{
+                \vspace{-5ex}\center{\includegraphics[width=.99\linewidth]{logo}}\\
+            }
+            {{\Nir@OrgLongName}}  % name of Institute
 
+        \end{flushleft}
+        }{
+        \begin{center}
+            {{\Nir@OrgLongName}} % name of Institute
+        \end{center}
+    }
     \begin{centering}
 
         \vspace{3ex}

@@ -1,9 +1,9 @@
 # LaTex проект
 ## Сборка документа
-'''asm
+```asm
 cd src
 pdflatex main
 bibtex main
 pdflatex main
 pdflatex main
-'''
+```

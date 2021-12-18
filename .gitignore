@@ -3,3 +3,5 @@
 *.nlo
 *.out
 *.toc
+*.bbl
+*.blg
